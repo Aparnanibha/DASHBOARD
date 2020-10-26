@@ -1,0 +1,285 @@
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/
+              font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font - awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" href ="Style.css">
+        <title> Dashboard </title>
+    </head>
+    <body>
+        
+        <div class="container">
+            
+                <nav class="navbar" >
+                <div class="nav_icon" onclick="toggleSidebar()">
+                    <i class="fa fa-bars"></i>     
+                </div>
+                <div class="navbar__left">
+                    <a href ="#"> Subscribers </a>
+                    <a class="active_link" href ="#"> Admin </a>
+                </div>
+                <div class="navbar__right">
+                    <a href ="#">
+                        <i class ="fa fa-search"></i>
+                    </a>
+                    <a href ="#">
+                        <i class ="fa fa-clock-o"></i>
+                    </a>
+                    <a href ="#">
+                        <img width="30" src="data:image/png;base64,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" alt=""/>
+                    </a>
+                </div>
+            </nav>
+            
+      
+            
+            <main>
+                <div class="main__container">
+                    
+                    <div class ="main__title">
+                        <img src="data:image/jpeg;base64,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" alt=""/>
+                        <div class="main__greeting">
+                            <h1>Welcome to Startup World </h1>
+                            <p> Welcome to your admin dashboard </p>
+                        </div>
+                    </div>
+                    
+                    <div class="main__cards">
+                        
+                        <div class="card">
+                            <i class="fa fa-user-o fa-2x text-lightblue"></i>
+                            <div class="card__inner">
+                            <p class="text-primary-p"> Number of Employee </p>
+                            <span class="font-bold text-title">400</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <i class="fa fa-calendar fa-2x text-blue"></i>
+                            <div class="card__inner">
+                            <p class="text-primary-p"> Age of company </p>
+                            <span class="font-bold text-title">15.5 year</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <i class="fa fa-user-o fa-2x text-yellow"></i>
+                            <div class="card__inner">
+                            <p class="text-primary-p"> Number of interns </p>
+                            <span class="font-bold text-title">500</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <i class="fa fa-thumbs-up fa-2x text-green"></i>
+                            <div class="card__inner">
+                            <p class="text-primary-p"> Number of Likers </p>
+                            <span class="font-bold text-title">1000</span>
+                            </div>
+                        </div>
+                    </div>
+               
+                
+                    <div class="charts">
+                        <div class="charts__left">
+                            <div class="charts__left__title">
+                                <div>
+                                    <h1>Daily Reports</h1>
+                                    <p> Pune,Kolkata</p>
+                                </div>
+                                <i  class="fa fa-usd" aria-hidden="true"></i>
+                            </div>
+                            <div id="apex1"></div>
+                        </div>
+                    
+                        <div class="charts_right">
+                            <div class="charts__right__title">
+                                <div>
+                                    <h1>States Report</h1>
+                                    <p>Pune,kolkata</p>
+                                </div>
+                                <i class="fa fa-usd" aria-hidden="true"></i>
+                            </div>
+                        
+                            <div class="charts__right__cards">
+                 
+                                <div class="card1">
+                                    <h1>Income</h1>
+                                    <p>Rs 75</p>
+                                </div>
+                            
+                                <div class="card2">
+                                    <h1>Sales</h1>
+                                    <p>Rs 124</p>
+                                </div>
+
+                                <div class="card3">
+                                    <h1>users</h1>
+                                    <p>3900</p>
+                                </div>
+
+                                <div class="card4">
+                                    <h1>Orders</h1>
+                                    <p>1581</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+                <div class="sidebar">
+                <center>
+                <div class="sidebar__title">    
+                    <div class="sidebar__img">    
+                        <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSsA4WuvFFa0S9ZexvPfQ6RR1wUTA5DjPTcA&usqp=CAU" alt="">
+                        <h4> STARTUPWORLD </h4>
+                    </div> 
+                        <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar"> </i>
+                </div>
+                </center>
+                
+                <div class="sidebar__menu">
+                    <div class="sidebar__link active_menu_link">
+                        <i class="fa fa-home"></i>
+                        <a href="#"> Dashboard</a>
+                    </div>
+                    <h2> MNG </h2>
+                    <div class="sidebar__link">
+                        <i class="fa fa-user-secret"></i>
+                        <a href="#"> Admin Management</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-building-o"></i>
+                        <a href="#"> Company Management</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-wrench"></i>
+                        <a href="#"> Employee Management</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-archive"></i>
+                        <a href="#"> Warehouse</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-handshake-o"></i>
+                        <a href="#"> Contracts</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-question"></i>
+                        <a href="#"> Requests</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-sign-out"></i>
+                        <a href="#"> Leave Policy</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-calendar-check-o"></i>
+                        <a href="#"> Special Days</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-files-o"></i>
+                        <a href="#"> Apply for leave</a>
+                    </div>
+                    
+                    <h2> PAYROLL </h2>
+                    <div class="sidebar__link">
+                        <i class="fa fa-money"></i>
+                        <a href="#"> Payroll</a>
+                    </div>
+                    
+                    <div class="sidebar__link">
+                        <i class="fa fa-briefcase"></i>
+                        <a href="#"> Paygrade</a>
+                    </div>
+                    <div class="sidebar__logout">
+                        <i class="fa fa-power-off"></i>
+                        <a href="#"> Log out</a>
+                    </div>
+                </div>
+            </div>
+                    
+           <!--
+            <div class="sidebar">
+                <div class="sidebar__title">
+                    <div class="sidebar__img">
+                      
+                            <a href="#0">
+                        <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSsA4WuvFFa0S9ZexvPfQ6RR1wUTA5DjPTcA&usqp=CAU" alt="" />
+                            </a>
+                            <h1>STARTUP WORLD</h1>
+                    </div>
+                    <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar"> </i>
+                </div>
+                
+                
+                   
+                <div class="sidebar__menu">
+                    <div class="sidebar__link active_menu_link">
+                        <i class="fa fa-home"></i>
+                        <a href="#"> Dashboard</a>
+                    </div>
+                    <h2> MNG </h2>
+                    <div class="sidebar__link">
+                        <i class="fa fa-user-secret"></i>
+                        <a href="#"> Admin Management</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-building-o"></i>
+                        <a href="#"> Company Management</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-wrench"></i>
+                        <a href="#"> Employee Management</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-archive"></i>
+                        <a href="#"> Warehouse</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-handshake-o"></i>
+                        <a href="#"> Contracts</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-question"></i>
+                        <a href="#"> Requests</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-sign-out"></i>
+                        <a href="#"> Leave Policy</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-calendar-check-o"></i>
+                        <a href="#"> Special Days</a>
+                    </div>
+                    <div class="sidebar__link">
+                        <i class="fa fa-files-o"></i>
+                        <a href="#"> Apply for leave</a>
+                    </div>
+                    
+                    <h2> PAYROLL </h2>
+                    <div class="sidebar__link">
+                        <i class="fa fa-money"></i>
+                        <a href="#"> Payroll</a>
+                    </div>
+                    
+                    <div class="sidebar__link">
+                        <i class="fa fa-briefcase"></i>
+                        <a href="#"> Paygrade</a>
+                    </div>
+                    <div class="sidebar__logout">
+                        <i class="fa fa-power-off"></i>
+                        <a href="#"> Log out</a>
+                    </div>
+                   </div>
+            </div>-->
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="script.js"> </script>   
+    </body>
+</html>
